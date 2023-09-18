@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account Profile edit</title>
+</head>
+<body>
+<table style="width:100%">
+    <tr>
+        <td style="vertical-align: top;"><!-- 1st colom -->
+            <ul><!-- unsorted list -->
+                <li><a href="/kanbas/Account/AccountNavigation/index.html">Account</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="/kanbas/Courses/CourseNavigation/index.html">Courses</a></li>
+                <li><a href="#">Calendar</a></li>
+                <li><a href="#">Inbox</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Studio</a></li>
+                <li><a href="#">Commons</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </td>
+        <td style="vertical-align: top;"><!-- 2nd colom -->
+            <ul><!-- unsorted list -->
+                <li><a href="#">Notifications</a></li>
+                <li><a href="/kanbas/Account/Profile/screen.html">Profile</a></li>
+                <li><a href="#">Files</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">ePortfolios</a></li>
+                <li><a href="#">Shared Content</a></li>
+                <li><a href="#">The Hub</a></li>
+                <li><a href="#">Qwickly Course Tools</a></li>
+                <li><a href="#">Global Announcements</a></li>
+            </ul>
+        </td>
+        <td style="vertical-align: top;"><!-- 3rd colom -->
+            <h2>Wenqing Fan</h2>
+            <br>
+            <form>
+                Name*: <input name="fullName" type="text" value="Wenqing Fan" required/>
+                Pronouns: <select><option selected>None</option></select>
+                <br>
+                Title: <input name="title" type="text"/>
+                <h3>Contact</h3>
+                <p>No registered services, you can add some on the <a href="#">settings</a> page</p>
+                <h3>Contact</h3>
+                <p>No registered services, you can add some on the <a href="#">settings</a> page</p>
+                <h3>Biography:</h3>
+                Wenqing Fan hasn't added a bio<br>
+                <textarea name="biography" cols='50'>Wenqing Fan hasn't added a bio</textarea>
+                <br><br>
+                <h3>Links</h3>
+                <ul><li><a href="#">link1</a>  Links to an exrenal site</li></ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th></th>
+                            <th>URL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input name="title" type="text" value="link1"/></td>
+                            <td>&rarr;</td>
+                            <td><input name="URL" type="url" value="https://www.link1.com"/></td>
+                            <td><a href="#">Remove</a>
+                        </tr>
+                    </tbody>
+                </table>
+                <button>Add another link</button>
+                <br>
+                <button  formaction="/Kanbas/Account/Profile/screen.html">Cancel</button>
+                <button  formaction="/Kanbas/Account/Profile/screen.html">Save Profile</button>
+                <br>
+                <button  formaction="/Kanbas/Account/Profile/screen.html">Edit Profile</button>
+                <button  formaction="/Kanbas/Account/Profile/screen.html">Cancel Editing</button>
+            </form>
+
+
+        </td>
+    </tr>
+</table>
+</body>
+</html>
