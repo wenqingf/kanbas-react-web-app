@@ -3,51 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <title>Account Profile</title>
+    <link rel="stylesheet" href="/kanbas/KanbasNavigation/index.css">
+    <link rel="stylesheet" href="/kanbas/Courses/CourseNavigation/index.css">
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
+    <link rel="stylesheet" href="/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-<table style="width:100%">
-    <tr>
-        <td style="vertical-align: top;"><!-- 1st colom -->
-            <ul><!-- unsorted list -->
-                <li><a href="/kanbas/Account/AccountNavigation/index.html">Account</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="/kanbas/Courses/CourseNavigation/index.html">Courses</a></li>
-                <li><a href="#">Calendar</a></li>
-                <li><a href="#">Inbox</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">Studio</a></li>
-                <li><a href="#">Commons</a></li>
-                <li><a href="#">Help</a></li>
-            </ul>
-        </td>
-        <td style="vertical-align: top;"><!-- 2nd colom -->
-            <ul><!-- unsorted list -->
-                <li><a href="#">Notifications</a></li>
-                <li><a href="/kanbas/Account/Profile/screen.html">Profile</a></li>
-                <li><a href="#">Files</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">ePortfolios</a></li>
-                <li><a href="#">Shared Content</a></li>
-                <li><a href="#">The Hub</a></li>
-                <li><a href="#">Qwickly Course Tools</a></li>
-                <li><a href="#">Global Announcements</a></li>
-            </ul>
-        </td>
-     <td style="vertical-align: top;"><!-- 3rd colom -->
-            <label>Wenqing Fan's Profile</label>
-            <hr>
-            <form action="/kanbas/Account/Profile/ProfileEditor/screen.html">
-                <button>Edit Profile</button>
-            </form>
-            <h2>Wenqing Fan</h2>
-            <h3>Contact</h3>
-            <p>No registered services, you can add some on the <a href="#">settings</a> page</p>
-            <h3>Biography</h3>
-            <p>Wenqing Fan hasn't added a bio</p>
-            <h3>Links</h3>
-            <p><a href="#">Link1</a></p>
-        </td>
-    </tr>
-</table>
+    <div class="wd-flex-col-container">
+        <div class="d-block d-md-none"><!-- menu when screen is too small -->
+            <h2>menu when screen is too small</h2>
+        </div>
+        <div class="wd-flex-row-container">
+            <div class="wd-bg-color-black d-none d-md-block wd-pos-fixed"><!-- 1st colom -->
+                <ul class="wd-kanbas-navigation"><!-- unsorted list -->
+                    <li style="padding: 0"><img src="/images/NU.png" style="width: 80px;"></li>
+                    <li class="wd-active"><a href="/kanbas/Account/Profile/screen.html">
+                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        Account</a></li>
+                    <li><a href="/kanbas/Dashboard/screen.html">
+                        <i class="fa fa-tachometer" aria-hidden="true"></i>
+                        Dashboard</a></li>
+                    <li><a href="/kanbas/Courses/Home/screen.html">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        Courses</a></li>
+                    <li><a href="#">
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        Calendar
+                    </a></li>
+                    <li><a href="#">
+                        <i class="fa fa-inbox" aria-hidden="true"></i><br>
+                        Inbox</a></li>
+                    <li><a href="#">
+                        <i class="fa fa-history" aria-hidden="true"></i>
+                        History</a></li>
+                    <li><a href="#">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        Studio</a></li>
+                    <li><a href="#">
+                        <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                        Commons</a></li>
+                    <li><a href="#">
+                        <i class="fa fa-question-circle" aria-hidden="true"></i><br>
+                        Help</a></li>
+                </ul>
+            </div>
+            <div class="wd-flex-row-container wd-pos-absolute-80">
+            <div class="d-none d-md-block mt-5"><!-- 2nd colom -->
+                <ul class="wd-course-navigation"><!-- unsorted list -->
+                    <li><a href="#">Notifications</a></li>
+                    <li class="wd-active"><a href="/kanbas/Account/Profile/screen.html">Profile</a></li>
+                    <li><a href="#">Files</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">ePortfolios</a></li>
+                    <li><a href="#">Shared Content</a></li>
+                    <li><a href="#">The Hub</a></li>
+                    <li><a href="#">Qwickly Course Tools</a></li>
+                    <li><a href="#">Global Announcements</a></li>
+                </ul>           
+            </div>
+                <div class="wd-margin-left"><!-- 3rd colom -->
+                    <label class="mt-3">Wenqing Fan's Profile</label>
+                    <hr>
+                    <i class="fa fa-user fa-4x" aria-hidden="true"></i>
+                    <a class="btn btn-secondary float-end" href="/kanbas/Account/Profile/ProfileEditor/screen.html" role="button">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>Edit Profile</a>
+                    <h2>Wenqing Fan</h2>
+                    <h3>Contact</h3>
+                    <p>No registered services, you can add some on the <a href="#" class="wd-herf">settings</a> page</p>
+                    <h3>Biography</h3>
+                    <p>Wenqing Fan hasn't added a bio</p>
+                    <h3>Links</h3>
+                    <p><i class="fa fa-link" aria-hidden="true"></i> <a href="https://www.youtube.com/@WebDevTV" class="wd-herf">Youtube&nbsp;&nbsp;&nbsp;<i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

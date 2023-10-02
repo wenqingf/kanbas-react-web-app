@@ -1,0 +1,229 @@
+/* https://fontawesome.com/v4/icons/ */
+body {
+    margin: 0;
+    padding: 0;
+}
+body*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.wd-fg-color-black { color: black; } 
+.wd-fg-color-white { color: white; } 
+.wd-fg-color-green { color: green; }
+
+.wd-bg-color-green {background-color: green; }
+.wd-bg-color-black {background-color: black; }
+
+/* .wd-border-fat {border-width: 20px 30px 20px 30px; }
+.wd-border-thin { border-width: 4px; }
+.wd-border-solid { border-style: solid; }
+.wd-border-dashed { border-style: dashed; }
+.wd-border-yellow { border-color: #ffff07; }
+.wd-border-red { border-color: #ff7070; }
+.wd-border-blue { border-color: #7070ff; } */
+
+/* .wd-padded-top-left {
+    padding-top: 50px;
+    padding-left: 50px;
+}
+.wd-padded-bottom-right {
+    padding-bottom: 50px;
+    padding-right: 50px;
+}
+.wd-padding-fat {padding: 50px;}
+
+.wd-margin-bottom { margin-bottom: 50px;}
+.wd-margin-right-left { 
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.wd-margin-all-around { margin: 30px;}
+
+.wd-rounded-corners-top { border-top-left-radius: 40px; border-top-right-radius: 40px;}
+.wd-rounded-corners-bottom { border-bottom-left-radius: 40px; border-bottom-right-radius: 40px;}
+.wd-rounded-corners-all-around { border-radius: 50px;}
+.wd-rounded-corners-inline { border-radius: 30px 0px 20px 50px;}
+
+.wd-dimension-portrait { width: 75px; height: 100px;}
+.wd-dimension-landscape { width: 100px; height: 75px;}
+.wd-dimension-square { width: 75px; height: 75px;} */
+
+/* .wd-pos-relative-nudge-up-right { 
+    position: relative;
+    bottom: 30px;
+    left: 30px;
+} 
+.wd-pos-relative-nudge-down-right {
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+
+
+.wd-pos-absolute-10-10 { 
+    position: absolute; 
+    top: 10px;
+    left: 10px;
+} 
+.wd-pos-absolute-50-50 {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+} */
+.wd-pos-absolute-80 {
+    position: absolute;
+    left: 80px;
+}
+
+.wd-pos-fixed {
+    position: fixed;
+    
+}
+.wd-pos-relative {
+    position: relative;
+    left: 80px; }
+
+
+/* .wd-zindex-bring-to-front {
+    z-index: 10;
+}
+
+.wd-float-left { float: left;}
+.wd-float-right {
+    float: right;
+    height: 100px;
+} */
+/* .wd-float-done { clear: both;}
+
+.wd-grid-row { clear: both;}
+.wd-grid-col-half-page { 
+    width: 50%;
+    float: left;
+} */
+/* 
+.wd-grid-col-third-page { width: 33%; float: left; }
+.wd-grid-col-two-thirds-page { width: 67%; float: left; }
+.wd-grid-col-left-sidebar { width: 20%; float: left; }
+.wd-grid-col-main-content { width: 60%; float: left; }
+.wd-grid-col-right-sidebar { width: 20%; float: left; } */
+
+.wd-flex-row-container {
+    display: flex;
+    flex-direction: row;
+}
+.wd-flex-col-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.wd-flex-grow-1{
+    flex-grow: 1
+}
+
+.wd-margin-left{
+    margin-left: 15px;
+} 
+
+.wd-margin-left-2{
+    margin-left: 30px;
+}
+
+
+.wd-herf{
+    color:red;
+    text-decoration: none;
+}
+
+/* Bootstrap Overides */
+
+/** Dashboard **/
+.wd-dashboard{
+    width: 260px;
+}
+.wd-dashboard-grid .col {
+    width: 260px;
+}
+
+/**Breadcrumb **/
+.wd-breadcrumb{
+    border-bottom: 1px solid;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+/** Card **/
+.card-title{
+    color: blue
+}
+
+.breadcrumb-item a{
+    color:red;
+    text-decoration: none;
+}
+
+/** Navbar **/
+.nav-link{
+    color: red;
+}
+/** assignment page **/
+.wd-kanbas-assignments .list-group{
+    border-radius: 0;
+}
+.wd-kanbas-assignments .list-group-item-secondary i{
+    margin-top: 0px;
+}
+.wd-kanbas-assignments i{
+    margin-top: 15px;
+    color:green;
+}
+.wd-assignment-margin{
+    margin-left: 20px;
+}
+.wd-rounded-corners{
+    border-radius: 20px;
+    border-color: grey;
+    border-style: solid;
+    border-width: 1px;
+    margin-bottom: 0;
+}
+/** home page **/
+.wd-home a{
+    color:red;
+    text-decoration: none;
+}
+.wd-icon-green{
+    color:green;
+}
+
+.list-group{
+    border-radius: 0;
+}
+
+.wd-fixed-width-300{
+    width: 300px;
+}
+
+.list-group-item{
+    border-left:2px solid green
+}
+
+.list-group-item a{
+    color:red;
+    text-decoration: none;
+}
+.list-group-item a i{
+    color:red;
+    text-decoration: none;
+}
+
+.list-group-item-secondary{
+    border-left:1px solid #c4c8cb;
+    margin-top:30px
+}
+
+
+
+.wd-transparent-list .list-group-item{
+    border:0px
+}
+.wd-col-main-content { width: 60%; float: left; }
