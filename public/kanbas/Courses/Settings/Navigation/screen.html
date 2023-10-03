@@ -5,6 +5,7 @@
     <title>Settings</title>
     <link rel="stylesheet" href="/kanbas/KanbasNavigation/index.css">
     <link rel="stylesheet" href="/kanbas/Courses/CourseNavigation/index.css">
+    <link rel="stylesheet" href="/kanbas/Navbar/index.css">
     <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
     <link rel="stylesheet" href="/lib/bootstrap/bootstrap.min.css">
@@ -12,45 +13,109 @@
 </head>
 <body>
     <div class="wd-flex-col-container">
-        <div class="d-block d-md-none"><!-- menu when screen is too small -->
-            <div class="mt-15"> </div>
-            <h2>menu when screen is too small</h2>
+        <div class="d-block d-md-none fixed-top"><!-- menu when screen is too small -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark wd-navbar">
+              <a class="navbar-brand" href="#">cs5610</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ml-auto">
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="/kanbas/Account/Profile/screen.html" id="productsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user-circle"></i>  
+                            Account
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="productsDropdown">
+                            <a class="dropdown-item" href="/kanbas/Account/Profile/screen.html">Profile</a>
+                          </div>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/kanbas/Dashboard/screen.html">
+                          <i class="fa fa-calendar"></i>
+                          Dashboard</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/kanbas/Courses/Home/screen.html" id="productsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fa fa-book"></i>
+                          Course
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="productsDropdown"> 
+                            <a class="dropdown-item" href="/kanbas/Courses/Home/screen.html">Home</a>
+                            <a class="dropdown-item" href="/kanbas/Courses/Assignments/screen.html">Assignments</a>
+                            <a class="dropdown-item" href="/kanbas/Courses/Grades/screen.html">Grades</a>
+                            <a class="dropdown-item" href="/kanbas/Courses/Settings/CourseDetails/screen.html">setings</a>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                          <i class="fa fa-calendar"></i>
+                          Calendar</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                          <i class="fa fa-inbox"></i>
+                          Inbox</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                          <i class="fa fa-history"></i>
+                          History</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                          <i class="fa fa-users"></i>
+                          Studio</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                          <i class="fa fa-question-circle"></i>
+                          help</a>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         </div>
+        <div class="d-block d-md-none" style=" margin-top: 70px;" ></div>
         <div class="wd-flex-row-container">
             <div class="wd-bg-color-black d-none d-md-block wd-pos-fixed"><!-- kanbas navigation -->
                 <ul class="wd-kanbas-navigation"><!-- unsorted list -->
                     <li style="padding: 0"><img src="/images/NU.png" style="width: 80px;"></li>
                     <li><a href="/kanbas/Account/Profile/screen.html">
-                        <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        <i class="fa fa-user-circle"></i>
                         Account</a></li>
                     <li><a href="/kanbas/Dashboard/screen.html">
-                        <i class="fa fa-tachometer" aria-hidden="true"></i>
+                        <i class="fa fa-tachometer"></i>
                         Dashboard</a></li>
                     <li class="wd-active"><a href="/kanbas/Courses/Home/screen.html">
-                        <i class="fa fa-book" aria-hidden="true"></i>
+                        <i class="fa fa-book"></i>
                         Courses</a></li>
                     <li><a href="#">
-                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <i class="fa fa-calendar"></i>
                         Calendar
                     </a></li>
                     <li><a href="#">
-                        <i class="fa fa-inbox" aria-hidden="true"></i><br>
+                        <i class="fa fa-inbox"></i><br>
                         Inbox</a></li>
                     <li><a href="#">
-                        <i class="fa fa-history" aria-hidden="true"></i>
+                        <i class="fa fa-history"></i>
                         History</a></li>
                     <li><a href="#">
-                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <i class="fa fa-users"></i>
                         Studio</a></li>
                     <li><a href="#">
-                        <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                        <i class="fa fa-commenting-o"></i>
                         Commons</a></li>
                     <li><a href="#">
-                        <i class="fa fa-question-circle" aria-hidden="true"></i><br>
+                        <i class="fa fa-question-circle"></i><br>
                         Help</a></li>
                 </ul>
             </div>
-            <div class="wd-flex-col-container wd-pos-absolute-80">
+            <div class="wd-bg-color-black d-none d-md-block" style=" margin-right: 80px;" ></div>
+            <div class="wd-flex-col-container wd-flex-grow-1">
                 <div class="d-none d-md-block wd-breadcrumb"><!-- bread crumb -->
                     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                         <ol class="breadcrumb">
@@ -81,7 +146,7 @@
                             <li class="wd-active"><a href="/kanbas/Courses/Settings/CourseDetails/screen.html">Settings</a></li>
                         </ul>            
                     </div>
-                    <div class="wd-margin-left"><!-- 3rd colom -->
+                    <div class="wd-margin-left col-lg-8 wd-navigation_settings"><!-- 3rd colom -->
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
                                 <a class="nav-link " href="/kanbas/Courses/Settings/CourseDetails/screen.html">Course Details</a>
@@ -101,38 +166,36 @@
                                 <a class="nav-link" href="#">Integrations</a>
                             </li>
                         </ul>
-                        <h3>Drag and drop items to reorder them in the course navigation</h3>
+                        <label>Drag and drop items to reorder them in the course navigation</label>
                         <ul class="list-group">
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>Home</li>
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>Modules</li>
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>Piazza</li>
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>Zoom Mettings</li>
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>Assignments</li>
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>Quizzes</li>
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>Grades</li>
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>People</li>
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>Panopto Video</li>
+                            <li class="list-group-item"></i>Home</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>Modules</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>Piazza</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>Zoom Mettings</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>Assignments</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>Quizzes</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>Grades</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>People</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>Panopto Video</li>
                         </ul>
-                        <h3>Drag items here to hide them from students</h3>
-                        <h4>Disabling most pages will cause students who visit those pages to be redirected to the course home page.</h4>
+                        <label>Drag items here to hide them from students</label>
+                        <small>Disabling most pages will cause students who visit those pages to be redirected to the course home page.</small>small>
                         <ul class="list-group">
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>Chat</li>
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>SCORM</li>
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>Attendence</li>
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>Barnes and Noble Bookstore</li>
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>Digication</li>
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>Top Hat</li>
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>Syllabus</li>
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>Perusall</li>
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>Microsoft Team Meetings</li>
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>VHL Central</li>
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>Gradescope 1.3</li>
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>Credentials</li>
-                            <li class="list-group-item"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>iClicker</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>Chat</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>SCORM</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>Attendence</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>Barnes and Noble Bookstore</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>Digication</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>Top Hat</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>Syllabus</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>Perusall</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>Microsoft Team Meetings</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>VHL Central</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>Gradescope 1.3</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>Credentials</li>
+                            <li class="list-group-item"><i class="fa fa-ellipsis-v float-end"></i>iClicker</li>
                         </ul>
-                        <form action="#">
-                            <button>Save</button>
-                        </form>
+                        <button type="submit" class="btn btn-danger float-start mt-3 mb-3">Save</button>
                     </div>
                 </div>
             </div>

@@ -5,6 +5,7 @@
     <title>Course Assign edit</title>
     <link rel="stylesheet" href="/kanbas/KanbasNavigation/index.css">
     <link rel="stylesheet" href="/kanbas/Courses/CourseNavigation/index.css">
+    <link rel="stylesheet" href="/kanbas/Navbar/index.css">
     <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
     <link rel="stylesheet" href="/lib/bootstrap/bootstrap.min.css">
@@ -12,9 +13,73 @@
 </head>
 <body>
     <div class="wd-flex-col-container">
-        <div class="d-block d-md-none"><!-- menu when screen is too small -->
-            <h2>menu when screen is too small</h2>
+        <div class="d-block d-md-none fixed-top"><!-- menu when screen is too small -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark wd-navbar">
+              <a class="navbar-brand" href="#">cs5610</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ml-auto">
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="/kanbas/Account/Profile/screen.html" id="productsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>  
+                            Account
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="productsDropdown">
+                            <a class="dropdown-item" href="/kanbas/Account/Profile/screen.html">Profile</a>
+                          </div>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/kanbas/Dashboard/screen.html">
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                          Dashboard</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/kanbas/Courses/Home/screen.html" id="productsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          Course
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="productsDropdown"> 
+                            <a class="dropdown-item" href="/kanbas/Courses/Home/screen.html">Home</a>
+                            <a class="dropdown-item" href="/kanbas/Courses/Assignments/screen.html">Assignments</a>
+                            <a class="dropdown-item" href="/kanbas/Courses/Grades/screen.html">Grades</a>
+                            <a class="dropdown-item" href="/kanbas/Courses/Settings/CourseDetails/screen.html">setings</a>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                          Calendar</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                          <i class="fa fa-inbox" aria-hidden="true"></i>
+                          Inbox</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                          <i class="fa fa-history" aria-hidden="true"></i>
+                          History</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                          <i class="fa fa-users" aria-hidden="true"></i>
+                          Studio</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                          <i class="fa fa-question-circle" aria-hidden="true"></i>
+                          help</a>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         </div>
+        <div class="d-block d-md-none" style=" margin-top: 70px;" ></div>
         <div class="wd-flex-row-container">
             <div class="wd-bg-color-black d-none d-md-block wd-pos-fixed"><!-- kanbas navigation -->
                 <ul class="wd-kanbas-navigation"><!-- unsorted list -->
@@ -49,7 +114,8 @@
                         Help</a></li>
                 </ul>
             </div>
-            <div class="wd-flex-col-container wd-pos-absolute-80">
+            <div class="wd-bg-color-black d-none d-md-block" style=" margin-right: 80px;" ></div>
+            <div class="wd-flex-col-container wd-flex-grow-1">
                 <div class="d-none d-md-block wd-breadcrumb"><!-- bread crumb -->
                     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                         <ol class="breadcrumb">
@@ -80,7 +146,7 @@
                             <li><a href="/kanbas/Courses/Settings/CourseDetails/screen.html">Settings</a></li>
                         </ul>            
                     </div>
-                    <div class="wd-margin-left"><!-- 3rd colom -->
+                    <div class="wd-margin-left col-lg-6"><!-- 3rd colom -->
                         <div class="wd-flex-row-container float-end">
                             <i class="fa fa-check-circle wd-fg-color-green mt-2" aria-hidden="true"></i>
                             <p class="wd-fg-color-green wd-margin-left mt-1">published</p>

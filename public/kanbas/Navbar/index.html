@@ -2,63 +2,74 @@
 <link rel="stylesheet" href="/kanbas/Courses/CourseNavigation/index.css">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.css">
 <link rel="stylesheet" href="/lib/bootstrap/bootstrap.min.css">
-
 <link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="index.css">
+
+
 <div class="d-block d-md-none"><!-- menu when screen is too small -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark wd-navbar">
+    <a class="navbar-brand" href="#">cs5610</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="/kanbas/Account/Profile/screen.html" id="productsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-user-circle" aria-hidden="true"></i>  
+                  Account
                 </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
-      <div class="dropdown">
-        <button
-          class="btn btn-outline-secondary dropdown-toggle btn-sm"
-          type="button"
-          id="dropdownMenuButton"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Dropdown button
-        </button>
-        <div
-          class="dropdown-menu"
-          aria-labelledby="dropdownMenuButton"
-        >
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </div>
+                <div class="dropdown-menu" aria-labelledby="productsDropdown">
+                  <a class="dropdown-item" href="/kanbas/Account/Profile/screen.html">Profile</a>
+                </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/kanbas/Dashboard/screen.html">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                Dashboard</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/kanbas/Courses/Home/screen.html" id="productsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-book" aria-hidden="true"></i>
+                Course
+              </a>
+              <div class="dropdown-menu" aria-labelledby="productsDropdown"> 
+                  <a class="dropdown-item" href="/kanbas/Courses/Home/screen.html">Home</a>
+                  <a class="dropdown-item" href="/kanbas/Courses/Assignments/screen.html">Assignments</a>
+                  <a class="dropdown-item" href="/kanbas/Courses/Grades/screen.html">Grades</a>
+                  <a class="dropdown-item" href="/kanbas/Courses/Settings/CourseDetails/screen.html">setings</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                Calendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa fa-inbox" aria-hidden="true"></i>
+                Inbox</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa fa-history" aria-hidden="true"></i>
+                History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                Studio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa fa-question-circle" aria-hidden="true"></i>
+                help</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </div>

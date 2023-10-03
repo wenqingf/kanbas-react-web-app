@@ -161,7 +161,7 @@ body*{
     text-decoration: none;
 }
 
-/** Navbar **/
+/** Navigation **/
 .nav-link{
     color: red;
 }
@@ -227,3 +227,8 @@ body*{
     border:0px
 }
 .wd-col-main-content { width: 60%; float: left; }
+
+.wd-course-setting a{
+    color:red;
+    text-decoration: none;
+}
