@@ -1,0 +1,19 @@
+.wd-course-navigation .list-group-item{
+    background-color: white;
+    padding: 0px;
+    width: 120px;
+    margin: 0px;
+    border-radius: 0%!important;
+    padding-left: 10px;
+    font-size: 14px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-color: white;
+    color:red;
+}
+.wd-course-navigation .list-group-item.active {
+    border-left: 2px solid black!important;
+    border-color: white;
+    color: black;
+    background-color: white
+}

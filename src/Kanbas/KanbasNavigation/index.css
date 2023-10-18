@@ -1,0 +1,30 @@
+.wd-kanbas-navigation .list-group-item{
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: black;
+    border-color: black;
+    border-radius: 0%!important;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 80px;
+    margin: 0px;
+    color: white;
+    font-size: 13px;
+
+}
+ 
+img {
+    background-color: black;
+}
+.wd-kanbas-navigation .list-group-item.active{
+    background-color: white;
+    border-color: white;
+    color:red;
+}
+
+.wd-kanbas-navigation .wd-icon {
+    color: red;
+    font-size: 1.5em;
+}
