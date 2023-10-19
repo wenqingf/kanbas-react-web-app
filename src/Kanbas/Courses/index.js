@@ -17,7 +17,8 @@ function Courses() {
     return (
         <div>
             <h2 className="d-block d-md-none">navbar</h2>
-            <h4 className="mb-4 mt-4" style={{color:'red', fontWeight: 'normal'}}>Course {course.name}&gt;<span style={{color: 'black'}}>{screen}</span></h4>
+            <h4 className="mt-2" style={{color:'red', fontWeight: 'normal'}}>Course {course.name}&gt;<span style={{color: 'black'}}>{screen}</span></h4>
+            <hr/>
             <span className="d-none d-md-block"><CourseNavigation /></span>
             <div className="overflow-y-scroll position-fixed bottom-0 end-0 wd-main-div" >
                 <Routes>
