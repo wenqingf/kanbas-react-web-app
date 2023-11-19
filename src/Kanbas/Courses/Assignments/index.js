@@ -102,8 +102,7 @@ function Assignments() {
                   onClick={() => dispatch(setAssignment(assignment))}
                   className="float-end btn btn-success"
                 >
-                  {" "}
-                  Edit{" "}
+                  Edit
                 </Link>
                 <button
                   className="float-end btn btn-danger"

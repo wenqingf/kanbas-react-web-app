@@ -1,36 +1,58 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { findModulesForCourse, createModule } from "./client";
 import {
   addModule,
   deleteModule,
   updateModule,
   setModule,
+  setModules,
 } from "./modulesReducer";
+import * as client from "./client";
 
 function ModuleList() {
   const { courseId } = useParams();
+  useEffect(() => {
+    findModulesForCourse(courseId).then((modules) =>
+      dispatch(setModules(modules))
+    );
+  }, [courseId]);
   const modules = useSelector((state) => state.modulesReducer.modules);
   const module = useSelector((state) => state.modulesReducer.module);
+  const handleDeleteModule = (moduleId) => {
+    client.deleteModule(moduleId).then((status) => {
+      dispatch(deleteModule(moduleId));
+    });
+  };
+  const handleUpdateModule = async () => {
+    const status = await client.updateModule(module);
+    dispatch(updateModule(module));
+  };
+  const handleAddMoudule = () => {
+    createModule(courseId, module).then((module) => {
+      dispatch(addModule(module));
+    });
+  };
   const dispatch = useDispatch();
   return (
     <ul className="list-group">
       <li className="list-group-item">
         <button
           className="float-end btn btn-success"
-          onClick={() => dispatch(addModule({ ...module, course: courseId }))}
+          onClick={handleAddMoudule}
         >
           Add
         </button>
         <button
           className="float-end btn btn-primary"
-          onClick={() => dispatch(updateModule(module))}
+          onClick={() => handleUpdateModule(module)}
         >
           Update
         </button>
 
         <input
-        className="form-control"
+          className="form-control"
           value={module.name}
           onChange={(e) =>
             dispatch(setModule({ ...module, name: e.target.value }))
@@ -38,7 +60,7 @@ function ModuleList() {
         />
         <br></br>
         <textarea
-        className="form-control"
+          className="form-control"
           value={module.description}
           onChange={(e) =>
             dispatch(setModule({ ...module, description: e.target.value }))
@@ -57,7 +79,7 @@ function ModuleList() {
             </button>
             <button
               className="float-end btn btn-danger"
-              onClick={() => dispatch(deleteModule(module._id))}
+              onClick={() => handleDeleteModule(module._id)}
             >
               Delete
             </button>
