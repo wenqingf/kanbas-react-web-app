@@ -1,32 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import {
-  FaGripVertical,
-  FaEllipsisV,
-  FaPlus,
-} from "react-icons/fa";
+import { FaGripVertical, FaEllipsisV, FaPlus } from "react-icons/fa";
 import "../../../kanbas.css";
 import { useSelector, useDispatch } from "react-redux";
+import { findAssignmentsForModule, createAssignment } from "./client";
 import {
   addAssignment,
   deleteAssignment,
   updateAssignment,
   setAssignment,
+  setAssignments,
 } from "./assignmentsReducer";
+import * as client from "./client";
+
 function Assignments() {
   const { courseId } = useParams();
-  const assignment = useSelector(
-    (state) => state.assignmentsReducer.assignment
-  );
-  const assignments = useSelector(
-    (state) => state.assignmentsReducer.assignments
-  );
-  const courseAssignments = assignments.filter(
-    (assignment) => assignment.course === courseId
-  );
+  useEffect(() => {
+    findAssignmentsForModule(courseId).then((assignments) =>
+      dispatch(setAssignments(assignments))
+    );
+  }, [courseId]);
+  const assignment = useSelector((state) => state.assignmentsReducer.assignment);
+  const assignments = useSelector( (state) => state.assignmentsReducer.assignments);
+  const handleDeleteAssignment = (assignmentId) => {
+    client.deleteAssignment(assignmentId).then((status) => {
+      dispatch(deleteAssignment(assignmentId));
+    });
+  };
+
+  const handleUpdateAssignment = async () => {
+    const status = await client.updateAssignment(assignment);
+    dispatch(updateAssignment(assignment));
+  };
+
+  const handleAddAssignment = () => {
+    createAssignment(courseId, assignment).then((assignment) => {
+      dispatch(addAssignment(assignment));
+    });
+  };
 
   const dispatch = useDispatch();
-
   return (
     <>
       <div
@@ -44,14 +57,13 @@ function Assignments() {
             Group
           </button>
           <Link
-                  key={assignment._id}
-                  to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
-                  onClick={() => dispatch(addAssignment({ ...assignment, course: courseId }))}
-                  className="float-right btn btn-danger"
-                >
-                  {" "}
-                  +Assignment{" "}
-                </Link>
+            key={assignment._id}
+            to={`/Kanbas/Courses/${courseId}/Assignments/new`}
+            // onClick={handleAddAssignment}
+            className="float-right btn btn-danger"
+          >
+            +Assignment
+          </Link>
           <button type="button" className="btn btn-secondary">
             <FaEllipsisV style={{ color: "white", marginTop: 0 }} />
           </button>
@@ -78,7 +90,6 @@ function Assignments() {
               className="wd-module-icon"
               style={{ color: "grey", float: "right" }}
             >
-              {" "}
               <FaPlus />
             </span>
             <span
@@ -91,10 +102,9 @@ function Assignments() {
             >
               40% of total
             </span>
-            
           </h4>
           <ul className="list-group">
-            {courseAssignments.map((assignment) => (
+            {assignments.map((assignment) => (
               <div className="list-group-item ">
                 <Link
                   key={assignment._id}
@@ -106,13 +116,14 @@ function Assignments() {
                 </Link>
                 <button
                   className="float-end btn btn-danger"
-                  onClick={() => dispatch(deleteAssignment(assignment._id))}
+                  onClick={() => handleDeleteAssignment(assignment._id)}
                 >
                   Delete
                 </button>
                 <li style={{ listStyleType: "none" }}>
                   <h5>{assignment.title}</h5>
-                  {assignment.description}<br/>
+                  {assignment.description}
+                  <br />
                   {assignment._id}
                 </li>
               </div>

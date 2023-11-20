@@ -1,22 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import db from "../../../Database";
 import { useSelector, useDispatch } from "react-redux";
+import { findAssignmentsForModule, createAssignment } from "../client";
 import {
   addAssignment,
   deleteAssignment,
   updateAssignment,
   setAssignment,
+  setAssignments,
 } from "../assignmentsReducer";
+
+import * as client from "../client";
 
 function AssignmentEditor() {
   const { courseId } = useParams();
-  const assignments = useSelector(
-    (state) => state.assignmentsReducer.assignments
-  );
-  const assignment = useSelector(
-    (state) => state.assignmentsReducer.assignment
-  );
+  useEffect(() => {
+    findAssignmentsForModule(courseId).then((assignments) =>
+      dispatch(setAssignments(assignments))
+    );
+  }, [courseId]);
+  const assignment = useSelector((state) => state.assignmentsReducer.assignment);
+  const assignments = useSelector( (state) => state.assignmentsReducer.assignments);
+  const handleDeleteAssignment = (assignmentId) => {
+    deleteAssignment(assignmentId).then((status) => {
+      dispatch(deleteAssignment(assignmentId));
+    });
+  };
+
+  const handleUpdateAssignment = async () => {
+    const status = await client.updateAssignment(assignment);
+    dispatch(updateAssignment(assignment));
+  };
+
+  const handleAddAssignment = () => {
+    createAssignment(courseId, assignment).then((assignment) => {
+      dispatch(addAssignment(assignment));
+    });
+  };
+
+
   const dispatch = useDispatch();
 
   //const { assignmentId } = useParams();
@@ -34,9 +57,7 @@ function AssignmentEditor() {
           for="assignmentname"
           className="form-control"
           value={assignment.title}
-          onChange={(e) =>
-            dispatch(setAssignment({ ...assignment, title: e.target.value }))
-          }
+          onChange={(e) =>dispatch(setAssignment({ ...assignment, title: e.target.value}))}
         />
         <label id="assignmentdescription" className="form-label">
           Assignment Description
@@ -45,11 +66,7 @@ function AssignmentEditor() {
           for="assignmentdescription"
           className="form-control"
           value={assignment.description}
-          onChange={(e) =>
-            dispatch(
-              setAssignment({ ...assignment, description: e.target.value })
-            )
-          }
+          onChange={(e) =>dispatch(setAssignment({ ...assignment, description: e.target.value }))}
         />
         <label id="assignmentduedate" className="form-label">
           Due
@@ -59,9 +76,7 @@ function AssignmentEditor() {
           className="form-control"
           type="date"
           value={assignment.dueDate}
-          onChange={(e) =>
-            dispatch(setAssignment({ ...assignment, dueDate: e.target.value }))
-          }
+          onChange={(e) => dispatch(setAssignment({ ...assignment, dueDate: e.target.value })) }
         />
         <label id="assignmentavailablefromdate" className="form-label">
           Available From
@@ -100,11 +115,21 @@ function AssignmentEditor() {
           onClick={() => {
             console.log("Saving assignment");
             navigate(`/Kanbas/Courses/${courseId}/Assignments`);
-            dispatch(updateAssignment(assignment));
+            dispatch(() => handleUpdateAssignment());
           }}
           className="btn btn-success me-2"
         >
           Update
+        </button>
+        <button
+          onClick={() => {
+            console.log("Saving assignment");
+            navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+            dispatch(() => handleAddAssignment());
+          }}
+          className="btn btn-success me-2"
+        >
+          ADD
         </button>
       </div>
     </div>

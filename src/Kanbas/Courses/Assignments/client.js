@@ -1,23 +1,45 @@
 import axios from "axios";
-const COURSES_URL = "http://localhost:4000/api/courses";
 
-const MODULES_URL = "http://localhost:4000/api/modules";
-export const deleteModule = async (moduleId) => {
-  const response = await axios.delete(`${MODULES_URL}/${moduleId}`);
-  return response.data;
+const API_BASE = process.env.REACT_APP_API_BASE;
+const COURSES_URL = `${API_BASE}/courses`;
+const ASSIGNMENTS_URL = `${API_BASE}/assignments`;
+
+export const deleteAssignment = async (assignmentId) => {
+  try {
+    const response = await axios.delete(`${ASSIGNMENTS_URL}/${assignmentId}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error deleting assignment:", error);
+    throw error;
+  }
 };
-export const updateModule = async (module) => {
-  const response = await axios.put(`${MODULES_URL}/${module._id}`, module);
-  return response.data;
+
+export const updateAssignment = async (assignment) => {
+  try {
+    const response = await axios.put(`${ASSIGNMENTS_URL}/${assignment._id}`, assignment);
+    return response.data;
+  } catch (error) {
+    console.error("Error updating assignment:", error);
+    throw error;
+  }
 };
-export const createModule = async (courseId, module) => {
-  const response = await axios.post(
-    `${COURSES_URL}/${courseId}/modules`,
-    module
-  );
-  return response.data;
+
+export const createAssignment = async (courseId, assignment) => {
+  try {
+    const response = await axios.post(`${COURSES_URL}/${courseId}/assignments`,assignment);
+    return response.data;
+  } catch (error) {
+    console.error("Error creating assignment:", error);
+    throw error;
+  }
 };
-export const findAssignmetnsForModules = async (courseId) => {
-  const response = await axios.get(`${COURSES_URL}/${courseId}/assignments`);
-  return response.data;
+
+export const findAssignmentsForModule= async (courseId) => {
+  try {
+    const response = await axios.get(`${COURSES_URL}/${courseId}/assignments`);
+    return response.data;
+  } catch (error) {
+    console.error("Error retrieving assignments:", error);
+    throw error;
+  }
 };
