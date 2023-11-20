@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 function WorkingWithArrays() {
+  // const API_BASE = process.env.REACT_APP_API_BASE;
+  const API = "https://kanbas-node-server-app-ka37.onrender.com/a5/todos";
   const [errorMessage, setErrorMessage] = useState(null);
-    const deleteTodo = async (todo) => {
+  const deleteTodo = async (todo) => {
     try {
       const response = await axios.delete(`${API}/${todo.id}`);
       setTodos(todos.filter((t) => t.id !== todo.id));
     } catch (error) {
       console.log(error);
-      setErrorMessage(error.response.data.message); 
+      setErrorMessage(error.response.data.message);
     }
   };
   const updateTodo = async () => {
@@ -18,7 +20,7 @@ function WorkingWithArrays() {
       setTodo({});
     } catch (error) {
       console.log(error);
-      setErrorMessage(error.response.data.message); 
+      setErrorMessage(error.response.data.message);
     }
   };
   const [todo, setTodo] = useState({
@@ -28,7 +30,7 @@ function WorkingWithArrays() {
     due: "2021-09-09",
     completed: false,
   });
-  const API = "http://localhost:4000/a5/todos";
+
   const [todos, setTodos] = useState([]);
   const postTodo = async () => {
     const response = await axios.post(API, todo);
@@ -119,7 +121,7 @@ function WorkingWithArrays() {
       </button>
       <button onClick={updateTodo} className="btn btn-success mb-2 w-100">
         Update Todo
-        </button>
+      </button>
       <button onClick={createTodo} className="btn btn-primary mb-2 w-100">
         Create Todo
       </button>
@@ -148,7 +150,7 @@ function WorkingWithArrays() {
           </li>
         ))}
       </ul>
-      
+
       <h5>Receiving Data from Servers as HTTP Responses</h5>
       <input
         value={todo.id}
