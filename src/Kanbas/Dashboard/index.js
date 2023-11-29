@@ -1,13 +1,38 @@
-import { React } from "react";
+import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-function Dashboard({
-  courses,
-  course,
-  setCourse,
-  addNewCourse,
-  deleteCourse,
-  updateCourse,
-}) {
+import * as client from "../Courses/client";
+
+function Dashboard() {
+
+  const [courses, setCourses] = useState([]);
+  const [course, setCourse] = useState([]);
+
+  const findAllCourses = async () => {
+    const response = await client.fetchCourses();
+    setCourses(response);
+  };
+
+  const addNewCourse = async () => {
+    const newCourse = await client.addNewCourse(course);
+    setCourses([newCourse, ...courses]);
+  };
+
+  const deleteCourse = async (id) => {
+    await client.deleteCourse(id);
+    setCourses(courses.filter((c) => c._id !== id));
+  };
+
+  const updateCourse = async () => {
+    await client.updateCourse(course);
+    setCourses(courses.map((c) => (c._id === course.id ? course : c)));
+  };
+
+  useEffect(() => {
+    findAllCourses();
+    }, []);
+
+
+
   return (
     <div>
       <h1>Dashboard</h1>
