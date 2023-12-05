@@ -13,7 +13,7 @@ import { BiHelpCircle } from "react-icons/bi";
 import "./index.css";
 
 function KanbasNavigation() {
-    const links = ["Account", "Dashboard", "Courses", "Groups", "Calendar","Inbox","History","Studio","Commons","Help"];
+    const links = ["Account", "Dashboard", "Courses", "Groups", "Calendar","Inbox","History","Studio","Commons","Help","signin"];
     const linkToIconMap = {
         Account: <BiUserCircle className="wd-icon" />,
         Dashboard: <RiDashboard3Fill className="wd-icon" />,
@@ -25,6 +25,7 @@ function KanbasNavigation() {
         Studio: <AiOutlineCluster className="wd-icon" />,
         Commons: <FaArrowRightFromBracket className="wd-icon" />,
         Help: <BiHelpCircle className="wd-icon" />,
+    
       };
     const { pathname } = useLocation();
     return (
